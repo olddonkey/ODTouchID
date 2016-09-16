@@ -14,6 +14,7 @@
 		A2D916DC1D8B802F00671D91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2D916DA1D8B802F00671D91 /* LaunchScreen.storyboard */; };
 		A2D916E71D8B802F00671D91 /* ODTouchIDExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D916E61D8B802F00671D91 /* ODTouchIDExampleTests.swift */; };
 		A2D916F51D8B807A00671D91 /* ODTouchID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D916F41D8B807A00671D91 /* ODTouchID.swift */; };
+		A2D916FB1D8B8D7800671D91 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D916FA1D8B8D7800671D91 /* LocalAuthentication.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		A2D916E61D8B802F00671D91 /* ODTouchIDExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODTouchIDExampleTests.swift; sourceTree = "<group>"; };
 		A2D916E81D8B802F00671D91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2D916F41D8B807A00671D91 /* ODTouchID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ODTouchID.swift; path = ODTouchID/ODTouchID.swift; sourceTree = "<group>"; };
+		A2D916FA1D8B8D7800671D91 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2D916FB1D8B8D7800671D91 /* LocalAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +68,7 @@
 				A2D916D01D8B802F00671D91 /* ODTouchIDExample */,
 				A2D916E51D8B802F00671D91 /* ODTouchIDExampleTests */,
 				A2D916CF1D8B802F00671D91 /* Products */,
+				A2D916F91D8B8D7800671D91 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +109,14 @@
 				A2D916F41D8B807A00671D91 /* ODTouchID.swift */,
 			);
 			name = ODTouchID;
+			sourceTree = "<group>";
+		};
+		A2D916F91D8B8D7800671D91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2D916FA1D8B8D7800671D91 /* LocalAuthentication.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,6 +436,7 @@
 				A2D916ED1D8B802F00671D91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A2D916EE1D8B802F00671D91 /* Build configuration list for PBXNativeTarget "ODTouchIDExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +445,7 @@
 				A2D916F01D8B802F00671D91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
