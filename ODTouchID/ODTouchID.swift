@@ -51,8 +51,8 @@ class ODTouchID {
     class func StartODTouchID(messageOnAuth:String, fallbackTitle:String, delegate:ODTouchIDProtocol){
         let context = LAContext()
         var authError: NSError? = nil
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &authError) {
-            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: messageOnAuth, reply: { (success, evalPolicyError) in
+        if context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &authError) {
+            context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: messageOnAuth, reply: { (success, evalPolicyError) in
                 if success {
                     DispatchQueue.main.async {
                         delegate.ODTouchIDAuthorizeSuccess()
@@ -60,40 +60,66 @@ class ODTouchID {
                 }else{
                     if #available(iOS 9.0,*){
                         if (evalPolicyError as! LAError).code == .appCancel {
-                            delegate.ODTouchIDAppCancelled()
+                            DispatchQueue.main.async {
+                                delegate.ODTouchIDAppCancelled()
+                            }
                         }else if (evalPolicyError as! LAError).code == .appCancel {
-                            delegate.ODTouchIDInvalidContext()
+                            DispatchQueue.main.async {
+                                delegate.ODTouchIDInvalidContext()
+                            }
                         }else if (evalPolicyError as! LAError).code == .appCancel{
-                            delegate.ODTouchIDTouchIDLockout()
+                            DispatchQueue.main.async {
+                                delegate.ODTouchIDTouchIDLockout()
+                            }
                         }
                     }
                     switch (evalPolicyError as! LAError).code {
                     case .authenticationFailed:
-                        delegate.ODTouchIDAuthorizeFail()
+                        DispatchQueue.main.async {
+                            delegate.ODTouchIDAuthorizeFail()
+                        }
                     case .userCancel:
-                        delegate.ODTouchIDUserCancelled()
+                        DispatchQueue.main.async {
+                            delegate.ODTouchIDUserCancelled()
+                        }
                     case .userFallback:
-                        delegate.ODTouchIDUserChooseFallBack()
+                        DispatchQueue.main.async {
+                            delegate.ODTouchIDUserChooseFallBack()
+                        }
                     case .systemCancel:
-                        delegate.ODTouchIDSystemTerminate()
+                        DispatchQueue.main.async {
+                            delegate.ODTouchIDSystemTerminate()
+                        }
                     case .passcodeNotSet:
-                        delegate.ODTouchIDNoPassword()
+                        DispatchQueue.main.async {
+                            delegate.ODTouchIDNoPassword()
+                        }
                     case .touchIDNotAvailable:
-                        delegate.ODTouchIDNotAvailAble()
+                        DispatchQueue.main.async {
+                            delegate.ODTouchIDNotAvailAble()
+                        }
                     case .touchIDNotEnrolled:
-                        delegate.ODTouchIDNoFingerPrint()
+                        DispatchQueue.main.async {
+                            delegate.ODTouchIDNoFingerPrint()
+                        }
                     default:
-                        delegate.ODTouchIDNotAvailable()
+                        DispatchQueue.main.async {
+                            delegate.ODTouchIDNotAvailable()
+                        }
                     }
                 }
             })
         }else{
             if Platform.isSimulator {
                 print("Please use Real phone")
-                delegate.ODTouchIDDeviceIsSimulator()
+                DispatchQueue.main.async {
+                    delegate.ODTouchIDDeviceIsSimulator()
+                }
             }
             else{
-                delegate.ODTouchIDDeviceNotSupportTouchID()
+                DispatchQueue.main.async {
+                    delegate.ODTouchIDDeviceNotSupportTouchID()
+                }
             }
         }
     }
