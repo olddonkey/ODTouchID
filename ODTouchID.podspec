@@ -9,7 +9,7 @@ s.author        = { "olddonkey" => "olddonkeyblog@gmail.com" }
 s.source        = { :git => "https://github.com/olddonkey/ODTouchID.git", :tag => "1.0.0" }
 s.requires_arc  = true
 s.description   = <<-DESC
-Use Touch ID with one line in Swift
+Use Touch ID with one line in Swift..
 DESC
 s.source_files  = "ODTouchID/*"
 s.platform      = :ios, '8.0'

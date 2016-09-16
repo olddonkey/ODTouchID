@@ -51,8 +51,8 @@ class ODTouchID {
     class func StartODTouchID(messageOnAuth:String, fallbackTitle:String, delegate:ODTouchIDProtocol){
         let context = LAContext()
         var authError: NSError? = nil
-        if context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &authError) {
-            context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: messageOnAuth, reply: { (success, evalPolicyError) in
+        if context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthentication, error: &authError) {
+            context.evaluatePolicy(LAPolicy.deviceOwnerAuthentication, localizedReason: messageOnAuth, reply: { (success, evalPolicyError) in
                 if success {
                     DispatchQueue.main.async {
                         delegate.ODTouchIDAuthorizeSuccess()
