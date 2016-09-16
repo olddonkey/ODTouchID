@@ -43,7 +43,7 @@ extension ODTouchIDProtocol{
     func ODTouchIDTouchIDLockout(){}
 }
 
-open class ODTouchID {
+class ODTouchID {
     static var touchID:ODTouchID?
     
     var delegate:ODTouchIDProtocol?
@@ -97,12 +97,10 @@ open class ODTouchID {
             }
         }
     }
-    
-    
 }
 
 /// Struct use for checking runtime platform if it's simulator
-public struct Platform {
+struct Platform {
     static let isSimulator: Bool = {
         var isSim = false
         #if arch(i386) || arch(x86_64)
