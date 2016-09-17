@@ -9,6 +9,8 @@
 import Foundation
 import LocalAuthentication
 
+
+/// Protocol for ODTouchID, two of them are required, rest are optional
 protocol ODTouchIDProtocol {
     //Must be implemented
     func ODTouchIDAuthorizeSuccess()
@@ -48,6 +50,11 @@ class ODTouchID {
     
     var delegate:ODTouchIDProtocol?
     
+    /// Class function use to start ODTouchID
+    ///
+    /// - parameter messageOnAuth: The string shows on Touch ID authentication view
+    /// - parameter fallbackTitle: The string shows on Touch ID verification failed page
+    /// - parameter delegate:      The object hold the delegate
     class func StartODTouchID(messageOnAuth:String, fallbackTitle:String, delegate:ODTouchIDProtocol){
         let context = LAContext()
         var authError: NSError? = nil
