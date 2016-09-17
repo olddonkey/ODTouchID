@@ -15,4 +15,5 @@ s.source_files  = "ODTouchID/*"
 s.platform      = :ios, '8.0'
 s.framework     = 'Foundation', 'UIKit'
 
+s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
 end
