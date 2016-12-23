@@ -3,7 +3,7 @@
 
 </p>
 
-ODTouchID is a small help library helps you use TouchID in your project.
+ODTouchID is a small library helps you use TouchID in your project.
 
 
 ## Features
