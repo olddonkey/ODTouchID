@@ -24,14 +24,12 @@ ODTouchID.StartODTouchID(messageOnAuth: "Your message", fallbackTitle: "Your fal
     }
 ```
 
-It will download the image from `url`, send it to both memory and disk cache, then show it in the `imageView`. When you use the same code later, the image will be retrieved from cache and show immediately.
-
 ## Requirements
 
 - iOS 8.0+ 
 - Swift 3 
 
-The main development of Kingfisher is based on Swift 3.
+The main development of ODTouchID is based on Swift 3.
 
 ### Contact
 
