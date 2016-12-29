@@ -46,7 +46,6 @@ extension ODTouchIDProtocol{
 }
 
 class ODTouchID {
-    static var touchID:ODTouchID?
     
     var delegate:ODTouchIDProtocol?
     
@@ -118,7 +117,7 @@ class ODTouchID {
             })
         }else{
             if Platform.isSimulator {
-                print("Please use Real phone")
+                print("Please use real device with Touch-ID to test")
                 DispatchQueue.main.async {
                     delegate.ODTouchIDDeviceIsSimulator()
                 }
